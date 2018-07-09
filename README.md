@@ -1,4 +1,4 @@
-# gabrieldwyer.github.io
+# gabrieldwyer.com
 
 this is where I host my website from.
 
