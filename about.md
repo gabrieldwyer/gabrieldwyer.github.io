@@ -4,11 +4,15 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Failing Polymath.
+Serial Hobbist.
+Entirely Uncertain.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+This is a website to project my own mind into the internet.
+
+Most likely, as you find it, this website will be in some or another state of disrepair. It's disintegration can be crudely compared to the Second Law of Thermodynamics: Entropy.
+
+If you haven't yet, do check out my blog.
 
 You can find the source code for Jekyll at GitHub:
 [jekyll][jekyll-organization] /
