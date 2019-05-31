@@ -1,41 +1,35 @@
 @charset "utf-8";
 
-// Define defaults for each variable.
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
-$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+// minima's variables
+
+$base-font-family:  'Lato', sans-serif;
+
+//-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+
 $base-font-size:   16px !default;
 $base-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
 
-$spacing-unit:     30px !default;
-
-$text-color:       #fdfdfd !default;
+$text-color:       #F7F7F5 !default;
 $background-color: #111 !default;
-$brand-color:      #2a7ae2 !default;
-
+$spacing-unit:     30px !default;
 $grey-color:       #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
 $grey-color-dark:  darken($grey-color, 25%) !default;
 
-$table-text-align: left !default;
+// my variables
+$c-dark-gray:    #44525D !default;
+$c-light-gray:   #637279 !default;
+$c-brick:        #654A42 !default;
+$c-light:        #EEEFE9 !default;
+$c-highlight:    #F8E8C4 !default;
 
-// Width of the content area
-$content-width:    800px !default;
-
-$on-palm:          600px !default;
-$on-laptop:        800px !default;
-
-// Use media queries like this:
-// @include media-query($on-palm) {
-//   .wrapper {
-//     padding-right: $spacing-unit / 2;
-//     padding-left: $spacing-unit / 2;
-//   }
-// }
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
-    @content;
+  @content;
   }
 }
 
@@ -43,9 +37,226 @@ $on-laptop:        800px !default;
   font-size: $base-font-size * $ratio;
 }
 
-// Import partials.
-@import
-  "styles/base",
-  "styles/layout",
-  "styles/syntax-highlighting"
-;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  min-height: 100px;
+  flex-direction: column;
+  color: $text-color;
+  background-color: $c-dark-gray;
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+}
+
+
+a, p, h1, h2, h3 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 5em;
+}
+
+h2 {
+  font-size: 2em;
+  padding: 20px;
+}
+
+a {
+  color: $text-color;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $c-highlight;
+}
+
+main {
+  display: block;
+}
+
+header {
+  border-bottom: 1px solid $grey-color-light;
+  min-height: $spacing-unit * 1.865;
+  // Positioning context for the mobile navigation icon
+  position: fixed;
+  width: 100%;
+  background-color: $c-dark-gray;
+}
+
+#welcome-section {
+  height: 100vh;
+}
+
+.fade-in {
+  padding-top: 40vh;
+  opacity: 1;
+  animation-name: fade-in-opacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
+}
+
+@keyframes fade-in-opacity {
+  0% {
+    padding-top: 38vh;
+    opacity: 0;
+  }
+  100% {
+    padding-top: 40vh;
+    opacity: 1;
+  }
+}
+
+#welcome-section::after {
+  content: "";
+  //background-image: url("https://www.graffitistreet.com/wp-content/uploads/2018/01/street-art-upper-west-side-precinct-melbourne-australia-pc-nicole-reed-rone-wip.jpg");
+  background-image: url("../assets/bridge.jpeg");
+  background-position: center;
+  background-size: cover;
+  top: $spacing-unit * 1.865; // whatever the height of the header is.
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -2;
+  opacity: 0.4;
+}
+
+.site-title {
+  @include relative-font-size(1.625);
+  font-weight: 300;
+  line-height: $base-line-height * $base-font-size * 2.25;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+  float: left;
+  margin-left: 20px;
+}
+
+#nav-bar {
+  float: right;
+  line-height: $base-line-height * $base-font-size * 2.25;
+}
+
+nav ul {
+  text-align: right;
+  position: fixed;
+  width: 100%;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+.nav-trigger {
+  display: none;
+}
+
+#projects {
+  background-color: $c-dark-gray;
+  //  background-image: linear-gradient($c-light-gray, $c-dark-gray)
+}
+
+.project-tile-wrapper {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-tile>.fas{
+  align-self: center;
+}
+
+.project-tile {
+  border: 1px solid white;
+  border-radius: 4px;
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  min-width: 200px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.project-tile:hover {
+  border: 1px solid $c-highlight;
+}
+
+.project-tile a p, h3 {
+  padding: 10px;
+}
+
+.project-tile .fas, .project-tile .fab {
+  font-size: 2.4em;
+  padding: 10px;
+}
+
+.wrapper {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.social-media-wrapper {
+  width: 60%;
+  margin-left: 20%;
+}
+
+.social-media-list {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  justify-content: space-around;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.social-media-list>li {
+  display: flex;
+  flex-direction: column;
+  font-size: 2em;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.social-media-list>.fas {
+
+
+}
+
+.site-footer {
+  border-top: 1px solid $grey-color-light;
+  padding: $spacing-unit/2 0;
+  text-align: center;
+  background-color: $c-dark-gray;
+}
+
+// @media only screen and (min-width:400px)  { /* smartphones, iPhone, portrait 480x320 phones */ }
+
+// @media only screen and (min-width:480px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+@media only screen and (min-width:540px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  .site-title {margin-left: 40px;}
+  nav li {margin-right: 40px;}
+}
+
+// @media only screen and (min-width:720px) {
+// }
+// @media only screen and (min-width:1200px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */
+// }
+
+// @media only screen and (min-width:64em) { /* big landscape tablets, laptops, and desktops */ }
+// @media only screen and (min-width:80em) { /* hi-res laptops and desktops */ }
