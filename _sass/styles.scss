@@ -119,7 +119,7 @@ header {
 #welcome-section::after {
   content: "";
   //background-image: url("https://www.graffitistreet.com/wp-content/uploads/2018/01/street-art-upper-west-side-precinct-melbourne-australia-pc-nicole-reed-rone-wip.jpg");
-  background-image: url("../assets/bridge.jpeg");
+  background-image: url("../assets/bridge_lowres.jpeg");
   background-position: center;
   background-size: cover;
   top: $spacing-unit * 1.865; // whatever the height of the header is.
