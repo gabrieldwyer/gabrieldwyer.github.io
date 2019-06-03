@@ -17,3 +17,6 @@ plugins:
 
 # Google Analytics
 google_analytics: UA-67193322-1
+
+collections:
+    projects:

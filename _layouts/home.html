@@ -19,32 +19,9 @@ layout: default
     <section id="projects">
         <h2>Projects</h2>
         <div class="project-tile-wrapper">
-
-            <div class="project-tile">
-                <a href="https://gabrieldwyer.com/baseball_elo_ratings">
-                <h3>Elo Baseball Ratings</h3>
-                <i class="fas fa-baseball-ball"></i><span class="fas">+</span><i class="fab fa-python"></i>
-                <p>A project applying elo rating systems to local baseball leagues</p>
-                </a>
-            </div>
-
-            <div class="project-tile">
-                <a href="https://summedupblog.wordpress.com">
-                <h3>Summed Up</h3>
-                <i class="fas fa-lightbulb"></i><span class="fas">+</span>
-                <i class="fas fa-pen"></i>
-                <p>An online blog written by me. Complex ideas concluded in 2 sentences</p>
-                </a>
-            </div>
-
-            <div class="project-tile">
-                <a href="href="{{ "/" | relative_url }}">
-                <h3>Portfolio Website</h3>
-                <i class="fab fa-sass"></i><span class="fas">+</span><i class="fab fa-html5"></i>
-                <p>This very website, a labour of love and custom sass and html</p>
-                </a>
-            </div>
-
+            {% for project in site.projects %}
+                {{ project }}
+            {% endfor %}
         </div>
     </section>
 
