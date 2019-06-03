@@ -2,11 +2,9 @@
 
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
-// minima's variables
+// variables
 
 $base-font-family:  'Lato', sans-serif;
-
-//-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 
 $base-font-size:   16px !default;
 $base-font-weight: 400 !default;
@@ -14,11 +12,7 @@ $small-font-size:  $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
 
 $text-color:       #F7F7F5 !default;
-$background-color: #111 !default;
 $spacing-unit:     30px !default;
-$grey-color:       #828282 !default;
-$grey-color-light: lighten($grey-color, 40%) !default;
-$grey-color-dark:  darken($grey-color, 25%) !default;
 
 // my variables
 $c-dark-gray:    #44525D !default;
@@ -26,6 +20,10 @@ $c-light-gray:   #637279 !default;
 $c-brick:        #654A42 !default;
 $c-light:        #EEEFE9 !default;
 $c-highlight:    #F8E8C4 !default;
+
+$text-color:       #F7F7F5 !default;
+
+// mixin queries
 
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
@@ -36,6 +34,8 @@ $c-highlight:    #F8E8C4 !default;
 @mixin relative-font-size($ratio) {
   font-size: $base-font-size * $ratio;
 }
+
+// the magic
 
 * {
   margin: 0;
@@ -84,12 +84,12 @@ main {
 }
 
 header {
-  border-bottom: 1px solid $grey-color-light;
+  border-bottom: 1px solid $text-color;
   min-height: $spacing-unit * 1.865;
-  // Positioning context for the mobile navigation icon
   position: fixed;
   width: 100%;
   background-color: $c-dark-gray;
+  line-height: $base-line-height * $base-font-size * 2.25;
 }
 
 #welcome-section {
@@ -118,7 +118,6 @@ header {
 
 #welcome-section::after {
   content: "";
-  //background-image: url("https://www.graffitistreet.com/wp-content/uploads/2018/01/street-art-upper-west-side-precinct-melbourne-australia-pc-nicole-reed-rone-wip.jpg");
   background-image: url("../assets/bridge_lowres.jpeg");
   background-position: center;
   background-size: cover;
@@ -132,18 +131,14 @@ header {
 }
 
 .site-title {
-  @include relative-font-size(1.625);
+  font-size: 1.8em;
   font-weight: 300;
-  line-height: $base-line-height * $base-font-size * 2.25;
-  letter-spacing: -1px;
-  margin-bottom: 0;
   float: left;
   margin-left: 20px;
 }
 
 #navbar {
   float: right;
-  line-height: $base-line-height * $base-font-size * 2.25;
 }
 
 nav ul {
@@ -160,55 +155,31 @@ nav li {
   margin-right: 20px;
 }
 
-.nav-trigger {
-  display: none;
-}
-
-#projects {
-  background-color: $c-dark-gray;
-  //  background-image: linear-gradient($c-light-gray, $c-dark-gray)
-}
-
 .project-tile-wrapper {
   display: flex;
-  flex-direction: row;
-  height: auto;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
 
-.project-tile>.fas{
-  align-self: center;
-}
-
 .project-tile {
-  border: 1px solid white;
+  border: 1px solid $text-color;
   border-radius: 4px;
   margin: 40px;
-  display: flex;
   flex-direction: column;
   flex: 1 1 0;
   min-width: 200px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 10px;
 }
 
 .project-tile:hover {
   border: 1px solid $c-highlight;
 }
 
-.project-tile a p, h3 {
-  padding: 10px;
-}
-
 .project-tile .fas, .project-tile .fab {
   font-size: 2.4em;
   padding: 10px;
-}
-
-.wrapper {
-  margin-right: auto;
-  margin-left: auto;
 }
 
 .social-media-wrapper {
@@ -221,28 +192,18 @@ nav li {
   flex-direction: row;
   align-self: center;
   justify-content: space-around;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding: 40px 0px;
 }
 
 .social-media-list>li {
-  display: flex;
-  flex-direction: column;
+  list-style-type: none;
   font-size: 2em;
-  vertical-align: middle;
-  text-align: center;
-}
-
-.social-media-list>.fas {
-
-
 }
 
 .site-footer {
-  border-top: 1px solid $grey-color-light;
+  border-top: 1px solid $text-color;
   padding: $spacing-unit/2 0;
   text-align: center;
-  background-color: $c-dark-gray;
 }
 
 // @media only screen and (min-width:400px)  { /* smartphones, iPhone, portrait 480x320 phones */ }
