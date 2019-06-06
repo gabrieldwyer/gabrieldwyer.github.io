@@ -135,6 +135,7 @@ header {
 }
 
 .site-title {
+  display: none;
   font-size: 1.8em;
   font-weight: 300;
   float: left;
@@ -214,7 +215,7 @@ nav li {
 
 // @media only screen and (min-width:480px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
 @media only screen and (min-width:540px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
-  .site-title {margin-left: 40px;}
+  .site-title {display: inline-block; margin-left: 40px;}
   nav li {margin-right: 40px;}
 }
 
