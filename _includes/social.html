@@ -1,8 +1,8 @@
-<div class="social-media-list">
-  {%- if site.github_username -%}<li><a href="https://github.com/{{ site.github_username| cgi_escape | escape }}" id="profile-link" target="_blank"><i class="fab fa-github"></i></a></li>{%- endif -%}
-  {%- if site.linkedin_username -%}<li><a href="https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}"><i class="fab fa-linkedin"></i></a></li>{%- endif -%}
-  {%- if site.twitter_username -%}<li><a href="https://www.twitter.com/{{ site.twitter_username| cgi_escape | escape }}"><i class="fab fa-twitter"></i></a></li>{%- endif -%}
+<ul class="social-media-list">
+  {%- if site.github_username -%}<li><a href="https://github.com/{{ site.github_username| cgi_escape | escape }}" id="profile-link" target="_blank" aria-label="Go to my Github profile"><i class="fab fa-github"></i></a></li>{%- endif -%}
+  {%- if site.linkedin_username -%}<li><a href="https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }} target="_blank" aria-label="Go to my LinkedIn profile""><i class="fab fa-linkedin"></i></a></li>{%- endif -%}
+  {%- if site.twitter_username -%}<li><a href="https://www.twitter.com/{{ site.twitter_username| cgi_escape | escape }}" target="_blank" aria-label="Go to my Twitter profile"><i class="fab fa-twitter"></i></a></li>{%- endif -%}
   {%- if site.email -%}
-  <li><a class="u-email" href="mailto:{{ site.email }}"><i class="fas fa-envelope"></i></a></li>
+  <li><a class="u-email" href="mailto:{{ site.email }}" target="_blank" aria-label="Send me an email"><i class="fas fa-envelope"></i></a></li>
   {%- endif -%}
-</div>
+</ul>
