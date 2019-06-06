@@ -102,13 +102,17 @@ header {
   animation-name: fade-in-opacity;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
-  animation-duration: 1s;
+  animation-duration: 4s;
 }
 
 @keyframes fade-in-opacity {
   0% {
     padding-top: 38vh;
     opacity: 0;
+  }
+  50% {
+      padding-top: 38vh;
+      opacity: 0;
   }
   100% {
     padding-top: 40vh;
